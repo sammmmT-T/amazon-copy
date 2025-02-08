@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .review:has(button) .content {
+        filter: blur(10px);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="review">
+        <button>Show spoiler</button>
+        <div class="content">
+          <h1>post 1</h1>
+          <p>random content goes here</p>
+        </div>
+      </div>
+      <div class="review">
+        <button>Show spoiler</button>
+        <div class="content">
+          <h1>post 2</h1>
+          <p>random content goes here</p>
+        </div>
+      </div>
+      <div class="review">
+        <button>Show spoiler</button>
+        <div class="content">
+          <h1>post 3</h1>
+          <p>random content goes here</p>
+        </div>
+      </div>
+      <p
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
+        inventore, atque, illo, neque sed molestiae quis nihil autem sapiente
+        mollitia nisi similique minima recusandae placeat quae voluptate eveniet
+        id nobis.</p
+      >
+    </main>
+
+    <script>
+      document.querySelector("main").addEventListener("click", (event) => {
+        if (event.target.closest("button")) {
+          const contentElement = event.target
+            .closest(".review")
+            .querySelector(".content");
+          contentElement.style.filter = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
